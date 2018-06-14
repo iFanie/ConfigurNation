@@ -53,7 +53,7 @@ val value = config.aBool().get()
 ## Licence
 
 ```
-Copyright 2017 Fanie Veizis
+Copyright 2018 Fanie Veizis
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
