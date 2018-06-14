@@ -1,6 +1,6 @@
 # ConfigurNation
-Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Experimental-yellow.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.1-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
+#### Annotation based Java Interfaces for your SharedPreferences
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-yellow.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.1-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
 ## Installation
 ### Gradle
 ```
