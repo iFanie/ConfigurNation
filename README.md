@@ -4,13 +4,13 @@
 ## Installation
 ### Gradle
 ```
-implementation 'com.izikode.izilib:configurnation:0.1'
-annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.1'
+implementation 'com.izikode.izilib:configurnation:0.2'
+annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.2'
 ```
 * for kotlin
 ```
-implementation 'com.izikode.izilib:configurnation:0.1'
-kapt 'com.izikode.izilib:configurnation-compiler:0.1'
+implementation 'com.izikode.izilib:configurnation:0.2'
+kapt 'com.izikode.izilib:configurnation-compiler:0.2'
 ```
 ## Usage
 ### #1 SETUP your mapping interface
