@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion Version.Sdk.BASE
+
+    defaultConfig {
+        minSdkVersion Version.Sdk.MIN
+        targetSdkVersion Version.Sdk.BASE
+
+        versionCode Version.Build.CODE
+        versionName "${ Version.Build.MAJOR }.${ Version.Build.MINOR }"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:${ Version.Dependency.SUPPORT }"
+
+    api project(':configurnation-annotations')
+}

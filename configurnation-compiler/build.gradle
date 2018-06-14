@@ -1,0 +1,9 @@
+apply plugin: 'java-library'
+
+sourceCompatibility = Version.Core.JAVA
+targetCompatibility = Version.Core.JAVA
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':configurnation-annotations')
+}
