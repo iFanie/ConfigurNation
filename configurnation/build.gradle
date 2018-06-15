@@ -18,28 +18,28 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'izilib'
-    bintrayName = 'configurnation'
+    bintrayRepo = Bintray.REPO
+    bintrayName = Bintray.NAME
 
-    publishedGroupId = 'com.izikode.izilib'
-    libraryName = 'izilib'
-    artifact = 'configurnation'
+    publishedGroupId = Bintray.GROUP_ID
+    libraryName = Bintray.REPO
+    artifact = Bintray.NAME
 
-    libraryDescription = 'Annotation based Java Interfaces for your SharedPreferences'
+    libraryDescription = Bintray.DESCRIPTION
 
-    siteUrl = 'https://github.com/iFanie/ConfigurNation'
-    gitUrl = 'https://github.com/iFanie/ConfigurNation.git'
+    siteUrl = Bintray.WEBSITE
+    gitUrl = Bintray.GIT
 
     libraryBuild = Version.Build.CODE
     libraryVersion = "${ Version.Build.MAJOR }.${ Version.Build.MINOR }"
 
-    developerId = 'iFanie'
-    developerName = 'Fanie Veizis'
-    developerEmail = 'fanieveizis@gmail.com'
+    developerId = Bintray.DEV_ID
+    developerName = Bintray.DEV_NAME
+    developerEmail = Bintray.DEV_EMAIL
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = [ "Apache-2.0" ]
+    licenseName = Bintray.LICENCE
+    licenseUrl = Bintray.LICENCE_NAME
+    allLicenses = Bintray.LICENCES
 }
 
 android {

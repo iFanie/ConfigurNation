@@ -17,9 +17,37 @@
 
 apply plugin: 'java-library'
 
+ext {
+    bintrayRepo = Bintray.REPO
+    bintrayName = "${ Bintray.NAME }-annotations"
+
+    publishedGroupId = Bintray.GROUP_ID
+    libraryName = Bintray.REPO
+    artifact = "${ Bintray.NAME }-annotations"
+
+    libraryDescription = Bintray.DESCRIPTION
+
+    siteUrl = Bintray.WEBSITE
+    gitUrl = Bintray.GIT
+
+    libraryBuild = Version.Build.CODE
+    libraryVersion = "${ Version.Build.MAJOR }.${ Version.Build.MINOR }"
+
+    developerId = Bintray.DEV_ID
+    developerName = Bintray.DEV_NAME
+    developerEmail = Bintray.DEV_EMAIL
+
+    licenseName = Bintray.LICENCE
+    licenseUrl = Bintray.LICENCE_NAME
+    allLicenses = Bintray.LICENCES
+}
+
 sourceCompatibility = Version.Core.JAVA
 targetCompatibility = Version.Core.JAVA
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

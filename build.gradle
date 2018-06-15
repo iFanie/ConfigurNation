@@ -17,11 +17,31 @@
 
 buildscript {
     ext {
+        Bintray = [
+                GROUP_ID: 'com.izikode.izilib',
+
+                REPO: 'izilib',
+                NAME: 'configurnation',
+
+                DESCRIPTION: 'Annotation based Java Interfaces for your SharedPreferences',
+
+                WEBSITE: 'https://github.com/iFanie/ConfigurNation',
+                GIT: 'https://github.com/iFanie/ConfigurNation.git',
+
+                DEV_ID: 'iFanie',
+                DEV_NAME: 'Fanie Veizis',
+                DEV_EMAIL: 'fanieveizis@gmail.com',
+
+                LICENCE: 'The Apache Software License, Version 2.0',
+                LICENCE_URL: 'http://www.apache.org/licenses/LICENSE-2.0.txt',
+                LICENCES: [ "Apache-2.0" ]
+        ]
+
         Version = [
             Build: [
-                CODE: 2,
+                CODE: 4,
                 MAJOR: 0,
-                MINOR: 2
+                MINOR: 4
             ],
 
             Core : [

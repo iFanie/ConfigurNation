@@ -18,28 +18,28 @@
 apply plugin: 'java-library'
 
 ext {
-    bintrayRepo = 'izilib'
-    bintrayName = 'configurnation-compiler'
+    bintrayRepo = Bintray.REPO
+    bintrayName = "${ Bintray.NAME }-compiler"
 
-    publishedGroupId = 'com.izikode.izilib'
-    libraryName = 'izilib'
-    artifact = 'configurnation-compiler'
+    publishedGroupId = Bintray.GROUP_ID
+    libraryName = Bintray.REPO
+    artifact = "${ Bintray.NAME }-compiler"
 
-    libraryDescription = 'Annotation based Java Interfaces for your SharedPreferences'
+    libraryDescription = Bintray.DESCRIPTION
 
-    siteUrl = 'https://github.com/iFanie/ConfigurNation'
-    gitUrl = 'https://github.com/iFanie/ConfigurNation.git'
+    siteUrl = Bintray.WEBSITE
+    gitUrl = Bintray.GIT
 
     libraryBuild = Version.Build.CODE
     libraryVersion = "${ Version.Build.MAJOR }.${ Version.Build.MINOR }"
 
-    developerId = 'iFanie'
-    developerName = 'Fanie Veizis'
-    developerEmail = 'fanieveizis@gmail.com'
+    developerId = Bintray.DEV_ID
+    developerName = Bintray.DEV_NAME
+    developerEmail = Bintray.DEV_EMAIL
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = [ "Apache-2.0" ]
+    licenseName = Bintray.LICENCE
+    licenseUrl = Bintray.LICENCE_NAME
+    allLicenses = Bintray.LICENCES
 }
 
 sourceCompatibility = Version.Core.JAVA

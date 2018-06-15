@@ -1,22 +1,22 @@
 # ConfigurNation
 #### Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-yellow.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.1-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.4-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
 ## Installation
 ### Gradle
 ```
-implementation 'com.izikode.izilib:configurnation:0.2'
-annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.2'
+implementation 'com.izikode.izilib:configurnation:0.4'
+annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.4'
 ```
 * for kotlin
 ```
-implementation 'com.izikode.izilib:configurnation:0.2'
-kapt 'com.izikode.izilib:configurnation-compiler:0.2'
+implementation 'com.izikode.izilib:configurnation:0.4'
+kapt 'com.izikode.izilib:configurnation-compiler:0.4'
 ```
 ## Usage
 ### #1 SETUP your mapping interface
 ```kotlin
 @ConfigurNation( name = "SampleAppConfig", mode = Context.MODE_PRIVATE )
-interface ConfigMap {}
+interface ConfigMap { ... }
 ```
 * Create your mapping interface and decorate with *@ConfigurNation*.
     * The *name* variable is the name of the generated Config class.
