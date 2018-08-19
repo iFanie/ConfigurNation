@@ -1,16 +1,16 @@
 # ConfigurNation
 #### Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.4-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.5-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
 ## Installation
 ### Gradle
 ```
-implementation 'com.izikode.izilib:configurnation:0.4'
-annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.4'
+implementation 'com.izikode.izilib:configurnation:0.5'
+annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.5'
 ```
 * for kotlin
 ```
-implementation 'com.izikode.izilib:configurnation:0.4'
-kapt 'com.izikode.izilib:configurnation-compiler:0.4'
+implementation 'com.izikode.izilib:configurnation:0.5'
+kapt 'com.izikode.izilib:configurnation-compiler:0.5'
 ```
 ## Usage
 ### #1 SETUP your mapping interface
@@ -24,7 +24,7 @@ interface ConfigMap { ... }
     * The mapping interface can be named anything.
 ```kotlin
 @ConfigurMember
-fun aBool() : Boolean
+fun aBool(): Boolean
 ```
 * Declare abstract functions inside your interface, for your Config fields.
     * Decorate the config fields with *@ConfigMember*
@@ -46,6 +46,9 @@ config.aBool().set(true)
   
 /* read */
 val value = config.aBool().get()
+
+/* clear */
+val value = config.aBool().clear()
 ```
 ## TODO
 1. Use JavaPoet for code generation
