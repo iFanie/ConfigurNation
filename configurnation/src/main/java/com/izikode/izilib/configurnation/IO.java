@@ -51,4 +51,13 @@ public abstract class IO<Type> {
     @Nullable
     public abstract Type get();
 
+    public void clear(boolean instantly) {
+        SharedPreferences.Editor editor = preferences.edit().remove(name);
+        transact(editor, instantly);
+    }
+
+    public void clear() {
+        clear(false);
+    }
+
 }

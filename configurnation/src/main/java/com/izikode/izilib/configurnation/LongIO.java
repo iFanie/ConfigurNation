@@ -28,6 +28,11 @@ public class LongIO extends IO<Long> {
 
     @Override
     public void set(Long value, boolean instantly) {
+        if (value == null) {
+            clear(instantly);
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit().putLong(name, value);
         transact(editor, instantly);
     }

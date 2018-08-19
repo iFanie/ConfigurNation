@@ -28,6 +28,11 @@ public class IntegerIO extends IO<Integer> {
 
     @Override
     public void set(Integer value, boolean instantly) {
+        if (value == null) {
+            clear(instantly);
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit().putInt(name, value);
         transact(editor, instantly);
     }

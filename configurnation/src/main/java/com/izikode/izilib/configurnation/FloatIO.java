@@ -28,6 +28,11 @@ public class FloatIO extends IO<Float> {
 
     @Override
     public void set(Float value, boolean instantly) {
+        if (value == null) {
+            clear(instantly);
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit().putFloat(name, value);
         transact(editor, instantly);
     }

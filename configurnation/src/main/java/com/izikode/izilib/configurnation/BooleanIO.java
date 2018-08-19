@@ -28,6 +28,11 @@ public class BooleanIO extends IO<Boolean> {
 
     @Override
     public void set(Boolean value, boolean instantly) {
+        if (value == null) {
+            clear(instantly);
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit().putBoolean(name, value);
         transact(editor, instantly);
     }

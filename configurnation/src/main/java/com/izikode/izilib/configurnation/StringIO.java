@@ -28,6 +28,11 @@ public class StringIO extends IO<String> {
 
     @Override
     public void set(String value, boolean instantly) {
+        if (value == null) {
+            clear(instantly);
+            return;
+        }
+
         SharedPreferences.Editor editor = preferences.edit().putString(name, value);
         transact(editor, instantly);
     }

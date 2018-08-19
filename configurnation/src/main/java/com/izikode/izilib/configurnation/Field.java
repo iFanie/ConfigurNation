@@ -57,4 +57,12 @@ public class Field<Type> {
         io.set(val);
     }
 
+    public void clear(boolean instantly) {
+        io.clear(instantly);
+    }
+
+    public void clear() {
+        io.clear();
+    }
+
 }
