@@ -27,24 +27,24 @@ public class StringIO extends IO<String> {
     }
 
     @Override
-    public void set(String value, boolean instantly) {
+    public void set(String variation, String value, boolean instantly) {
         if (value == null) {
-            clear(instantly);
+            clear(variation, instantly);
             return;
         }
 
-        SharedPreferences.Editor editor = preferences.edit().putString(name, value);
+        SharedPreferences.Editor editor = preferences.edit().putString(preferenceName(variation), value);
         transact(editor, instantly);
     }
 
     @Override
     @Nullable
-    public String get() {
-        if (!exist()) {
+    public String get(String variation) {
+        if (!exist(variation)) {
             return null;
         }
 
-        return preferences.getString(name, null);
+        return preferences.getString(preferenceName(variation), null);
     }
 
 }

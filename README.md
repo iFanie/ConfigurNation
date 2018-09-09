@@ -1,16 +1,16 @@
 # ConfigurNation
 #### Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.5-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.6-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
 ## Installation
 ### Gradle
 ```
-implementation 'com.izikode.izilib:configurnation:0.5'
-annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.5'
+implementation 'com.izikode.izilib:configurnation:0.6'
+annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.6'
 ```
 * for kotlin
 ```
-implementation 'com.izikode.izilib:configurnation:0.5'
-kapt 'com.izikode.izilib:configurnation-compiler:0.5'
+implementation 'com.izikode.izilib:configurnation:0.6'
+kapt 'com.izikode.izilib:configurnation-compiler:0.6'
 ```
 ## Usage
 ### #1 SETUP your mapping interface

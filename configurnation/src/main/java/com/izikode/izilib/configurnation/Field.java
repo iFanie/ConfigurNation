@@ -40,13 +40,30 @@ public class Field<Type> {
         }
     }
 
+    public boolean exists(String variation) {
+        return io.exist(variation);
+    }
+
     public boolean exists() {
         return io.exist();
     }
 
     @Nullable
+    public Type get(String variation) {
+        return (Type) io.get(variation);
+    }
+
+    @Nullable
     public Type get() {
         return (Type) io.get();
+    }
+
+    public void set(String variation, Type val, boolean instantly) {
+        io.set(variation, val, instantly);
+    }
+
+    public void set(String variation, Type val) {
+        io.set(variation, val);
     }
 
     public void set(Type val, boolean instantly) {
@@ -55,6 +72,14 @@ public class Field<Type> {
 
     public void set(Type val) {
         io.set(val);
+    }
+
+    public void clear(String variation, boolean instantly) {
+        io.clear(variation, instantly);
+    }
+
+    public void clear(String variation) {
+        io.clear(variation);
     }
 
     public void clear(boolean instantly) {

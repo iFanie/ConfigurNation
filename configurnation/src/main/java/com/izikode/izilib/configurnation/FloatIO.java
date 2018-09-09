@@ -27,24 +27,24 @@ public class FloatIO extends IO<Float> {
     }
 
     @Override
-    public void set(Float value, boolean instantly) {
+    public void set(String variation, Float value, boolean instantly) {
         if (value == null) {
-            clear(instantly);
+            clear(variation, instantly);
             return;
         }
 
-        SharedPreferences.Editor editor = preferences.edit().putFloat(name, value);
+        SharedPreferences.Editor editor = preferences.edit().putFloat(preferenceName(variation), value);
         transact(editor, instantly);
     }
 
     @Override
     @Nullable
-    public Float get() {
-        if (!exist()) {
+    public Float get(String variation) {
+        if (!exist(variation)) {
             return null;
         }
 
-        return preferences.getFloat(name, 0);
+        return preferences.getFloat(preferenceName(variation), 0);
     }
 
 }

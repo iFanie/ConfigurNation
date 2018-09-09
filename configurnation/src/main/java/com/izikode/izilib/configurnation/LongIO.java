@@ -27,24 +27,24 @@ public class LongIO extends IO<Long> {
     }
 
     @Override
-    public void set(Long value, boolean instantly) {
+    public void set(String variation, Long value, boolean instantly) {
         if (value == null) {
-            clear(instantly);
+            clear(variation, instantly);
             return;
         }
 
-        SharedPreferences.Editor editor = preferences.edit().putLong(name, value);
+        SharedPreferences.Editor editor = preferences.edit().putLong(preferenceName(variation), value);
         transact(editor, instantly);
     }
 
     @Override
     @Nullable
-    public Long get() {
-        if (!exist()) {
+    public Long get(String variation) {
+        if (!exist(variation)) {
             return null;
         }
 
-        return preferences.getLong(name, 0);
+        return preferences.getLong(preferenceName(variation), 0);
     }
 
 }

@@ -27,24 +27,24 @@ public class BooleanIO extends IO<Boolean> {
     }
 
     @Override
-    public void set(Boolean value, boolean instantly) {
+    public void set(String variation, Boolean value, boolean instantly) {
         if (value == null) {
-            clear(instantly);
+            clear(variation, instantly);
             return;
         }
 
-        SharedPreferences.Editor editor = preferences.edit().putBoolean(name, value);
+        SharedPreferences.Editor editor = preferences.edit().putBoolean(preferenceName(variation), value);
         transact(editor, instantly);
     }
 
     @Override
     @Nullable
-    public Boolean get() {
-        if (!exist()) {
+    public Boolean get(String variation) {
+        if (!exist(variation)) {
             return null;
         }
 
-        return preferences.getBoolean(name, false);
+        return preferences.getBoolean(preferenceName(variation), false);
     }
 
 }

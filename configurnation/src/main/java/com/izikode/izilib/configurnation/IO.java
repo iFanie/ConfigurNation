@@ -20,10 +20,20 @@ package com.izikode.izilib.configurnation;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 
+import java.util.Locale;
+
 public abstract class IO<Type> {
 
     protected final SharedPreferences preferences;
-    protected final String name;
+    private final String name;
+
+    protected String preferenceName(@Nullable String variation) {
+        if (variation == null) {
+            return name;
+        } else {
+            return String.format(Locale.ENGLISH, "%1$s_%2$s", name, variation);
+        }
+    }
 
     protected void transact(SharedPreferences.Editor editor, boolean instantly) {
         if (instantly) {
@@ -38,26 +48,51 @@ public abstract class IO<Type> {
         this.name = name;
     }
 
-    public boolean exist() {
-        return preferences.contains(name);
+    public boolean exist(String variation) {
+        return preferences.contains(preferenceName(variation));
     }
 
-    public abstract void set(Type value, boolean instantly);
+    public boolean exist() {
+        return exist(null);
+    }
+
+    public abstract void set(String variation, Type value, boolean instantly);
+
+    public void set(String variation, Type value) {
+        set(variation, value, false);
+    }
+
+    public void set(Type value, boolean instantly) {
+        set(null, value, instantly);
+    }
 
     public void set(Type value) {
-        set(value, false);
+        set(null, value, false);
     }
 
     @Nullable
-    public abstract Type get();
+    public abstract Type get(String variation);
 
-    public void clear(boolean instantly) {
-        SharedPreferences.Editor editor = preferences.edit().remove(name);
+    @Nullable
+    public Type get() {
+        return get(null);
+    }
+
+    public void clear(String variation, boolean instantly) {
+        SharedPreferences.Editor editor = preferences.edit().remove(preferenceName(variation));
         transact(editor, instantly);
     }
 
+    public void clear(String variation) {
+        clear(variation, false);
+    }
+
+    public void clear(boolean instantly) {
+        clear(null, instantly);
+    }
+
     public void clear() {
-        clear(false);
+        clear(null, false);
     }
 
 }

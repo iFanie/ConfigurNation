@@ -27,24 +27,24 @@ public class IntegerIO extends IO<Integer> {
     }
 
     @Override
-    public void set(Integer value, boolean instantly) {
+    public void set(String variation, Integer value, boolean instantly) {
         if (value == null) {
-            clear(instantly);
+            clear(variation, instantly);
             return;
         }
 
-        SharedPreferences.Editor editor = preferences.edit().putInt(name, value);
+        SharedPreferences.Editor editor = preferences.edit().putInt(preferenceName(variation), value);
         transact(editor, instantly);
     }
 
     @Override
     @Nullable
-    public Integer get() {
-        if (!exist()) {
+    public Integer get(String variation) {
+        if (!exist(variation)) {
             return null;
         }
 
-        return preferences.getInt(name, 0);
+        return preferences.getInt(preferenceName(variation), 0);
     }
 
 }
