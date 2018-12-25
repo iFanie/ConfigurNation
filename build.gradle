@@ -1,45 +1,46 @@
 buildscript {
     ext {
         Bintray = [
-                GROUP_ID: 'com.izikode.izilib',
+                GROUP_ID : 'com.izikode.izilib',
 
-                REPO: 'izilib',
-                NAME: 'configurnation',
+                REPO : 'izilib',
+                NAME : 'configurnation',
 
-                DESCRIPTION: 'Annotation based Java Interfaces for your SharedPreferences',
+                DESCRIPTION : 'Annotation based Java Interfaces for your SharedPreferences',
 
-                WEBSITE: 'https://github.com/iFanie/ConfigurNation',
-                GIT: 'https://github.com/iFanie/ConfigurNation.git',
+                WEBSITE : 'https://github.com/iFanie/ConfigurNation',
+                GIT : 'https://github.com/iFanie/ConfigurNation.git',
 
-                DEV_ID: 'iFanie',
-                DEV_NAME: 'Fanie Veizis',
-                DEV_EMAIL: 'fanieveizis@gmail.com',
+                DEV_ID    : 'iFanie',
+                DEV_NAME  : 'Fanie Veizis',
+                DEV_EMAIL : 'fanieveizis@gmail.com',
 
-                LICENCE: 'The Apache Software License, Version 2.0',
-                LICENCE_URL: 'http://www.apache.org/licenses/LICENSE-2.0.txt',
-                LICENCES: [ "Apache-2.0" ]
+                LICENCE     : 'The Apache Software License, Version 2.0',
+                LICENCE_URL : 'http://www.apache.org/licenses/LICENSE-2.0.txt',
+                LICENCES    : [ "Apache-2.0" ]
         ]
 
         Version = [
             Build      : [
-                CODE: 6,
-                MAJOR: 0,
-                MINOR: 6
+                CODE  : 6,
+                MAJOR : 0,
+                MINOR : 6
             ],
 
             Core       : [
-                GRADLE: '3.1.3',
-                JAVA: '1.8',
-                KOTLIN: '1.3.11'
+                GRADLE : '3.1.3',
+                JAVA   : '1.8',
+                KOTLIN : '1.3.11'
             ],
 
             Sdk        : [
-                BASE: 28,
-                MIN: 14
+                BASE : 28,
+                MIN  : 14
             ],
 
             Dependency : [
-                SUPPORT: '28.0.0'
+                SUPPORT   : '28.0.0',
+                KCOMPILER : '0.10'
             ]
         ]
     }

@@ -1,4 +1,5 @@
 apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 ext {
     bintrayRepo = Bintray.REPO
@@ -30,7 +31,13 @@ targetCompatibility = Version.Core.JAVA
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${ Version.Core.KOTLIN }"
+    implementation "com.izikode.izilib:base-kotlin-compiler:${ Version.Dependency.KCOMPILER }"
     implementation project(':configurnation-annotations')
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
