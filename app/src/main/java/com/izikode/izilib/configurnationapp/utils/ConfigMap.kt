@@ -8,21 +8,27 @@ import com.izikode.izilib.configurnationannotations.ConfigurNation
 interface ConfigMap {
 
     @ConfigurMember
-    fun aBool() : Boolean
+    fun aBool(): Boolean
 
     @ConfigurMember
-    fun aFloat() : Float
+    fun aFloat(): Float
 
     @ConfigurMember
-    fun anInt() : Int
+    fun anInt(): Int
 
     @ConfigurMember
-    fun aLong() : Long
+    fun aLong(): Long
 
     @ConfigurMember
-    fun aString() : String
+    fun aDouble(): Double
 
     @ConfigurMember
-    fun name() : String
+    fun aChar(): Char
+
+    @ConfigurMember
+    fun aString(): String
+
+    @ConfigurMember
+    fun name(): String
 
 }
