@@ -6,7 +6,7 @@ buildscript {
                 REPO : 'izilib',
                 NAME : 'configurnation',
 
-                DESCRIPTION : 'Annotation based Java Interfaces for your SharedPreferences',
+                DESCRIPTION : 'Annotation based Kotlin Interfaces for Android SharedPreferences',
 
                 WEBSITE : 'https://github.com/iFanie/ConfigurNation',
                 GIT : 'https://github.com/iFanie/ConfigurNation.git',
@@ -22,9 +22,9 @@ buildscript {
 
         Version = [
             Build      : [
-                CODE  : 6,
+                CODE  : 7,
                 MAJOR : 0,
-                MINOR : 6
+                MINOR : 7
             ],
 
             Core       : [
