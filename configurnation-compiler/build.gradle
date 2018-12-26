@@ -1,21 +1,5 @@
-/*
- * Copyright 2018 Fanie Veizis
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
 apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 ext {
     bintrayRepo = Bintray.REPO
@@ -47,7 +31,13 @@ targetCompatibility = Version.Core.JAVA
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${ Version.Core.KOTLIN }"
+    implementation "com.izikode.izilib:base-kotlin-compiler:${ Version.Dependency.KCOMPILER }"
     implementation project(':configurnation-annotations')
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
