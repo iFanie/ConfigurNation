@@ -1,5 +1,5 @@
 package com.izikode.izilib.configurnationannotations
 
 @Retention(AnnotationRetention.SOURCE)
-@Target(AnnotationTarget.PROPERTY)
+@Target(AnnotationTarget.FUNCTION)
 annotation class ConfigurMember
