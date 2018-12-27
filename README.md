@@ -1,17 +1,30 @@
 # ConfigurNation
 #### Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.6-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.8-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib/com/izikode/izilib/configurnation/0.8/)
+
 ## Installation
 ### Gradle
+#### Dependencies
+```groovy
+implementation 'com.izikode.izilib:configurnation:0.8'
+kapt 'com.izikode.izilib:configurnation-compiler:0.8'
 ```
-implementation 'com.izikode.izilib:configurnation:0.6'
-annotationProcessor 'com.izikode.izilib:configurnation-compiler:0.6'
+
+#### Source sets
+ConfigurNation generates Kotlin source files, so you need to include the generation folder into your source sets.
+```groovy
+android {
+   ...
+   sourceSets {
+        main {
+            java {
+                srcDir "${buildDir.absolutePath}/generated/source/kaptKotlin/"
+            }
+        }
+    }
+}
 ```
-* for kotlin
-```
-implementation 'com.izikode.izilib:configurnation:0.6'
-kapt 'com.izikode.izilib:configurnation-compiler:0.6'
-```
+
 ## Usage
 ### #1 SETUP your mapping interface
 ```kotlin
@@ -21,7 +34,7 @@ interface ConfigMap { ... }
 * Create your mapping interface and decorate with *@ConfigurNation*.
     * The *name* variable is the name of the generated Config class.
     * The *mode* variable is the mode assigned to the inner SharedPreferences object.
-    * The mapping interface can be named anything.
+    * The mapping interface can be named anything, the qualified name of the class will be used as the SharedPreferences identifier.
 ```kotlin
 @ConfigurMember
 fun aBool(): Boolean
@@ -36,25 +49,26 @@ fun aBool(): Boolean
             * Integer
             * Long
             * String
+            
 ### #2 BUILD your project
+
 ### #3 USE
 ```kotlin
 val config = SampleAppConfig(context)
   
 /* write */
-config.aBool().set(true)
+config.aBool = true
   
 /* read */
-val value = config.aBool().get()
-
-/* clear */
-val value = config.aBool().clear()
+val value = config.aBool
 ```
-## TODO
-1. Use JavaPoet for code generation
-2. Use serialization/deserialization for Object type support
-## Licence
 
+### #4 MEMBER PARAMS
+The ConfigurMember annotation has two parameters for more complex functions. The ```type``` controls how the data of the member are retrieved and stored and supports **Synchronous**, **Asynchronous** and **Mixed** modes. The ```withVariants``` flag controls whether a member has **Key-based Variants** under the same name or not.
+
+For a full example of those parameters, see the Sample project.
+
+## Licence
 ```
 Copyright 2018 Fanie Veizis
 
