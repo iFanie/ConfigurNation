@@ -24,7 +24,7 @@ class Compiler : BaseKotlinCompiler() {
 
                     memberHelpers = Array(members.size) { index ->
                         members[index].let { member ->
-                            Builder.MemberHelper(member.info.name, member.info.type)
+                            Builder.MemberHelper(member.info.name, member.info.type, member.annotation.type)
                         }
                     }
                 }
