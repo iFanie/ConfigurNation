@@ -10,7 +10,7 @@ annotation class ConfigurMember(
         val type: Type = Type.MIXED,
 
         /**
-         * When {@code true} the member supports index based variants. <i>Default value is {@code false}.</i>
+         * When {@code true} the member supports key based variants. <i>Default value is {@code false}.</i>
          */
         val withVariants: Boolean = false
 
