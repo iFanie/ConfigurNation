@@ -50,18 +50,27 @@ class $simpleName(
 
             val name: String,
             val type: String,
-            val memberType: ConfigurMember.Type
+            val memberType: ConfigurMember.Type,
+            val withVariants: Boolean
 
     ) {
 
-        val property: String get() =
+        val property: String get() = if (!withVariants)
 """
     var $name: $type?
         get() = ${name}Field.get()
         set(value) { ${name}Field.set(value, true) }
 """
+        else
+"""
+    fun get${name.capitalize()}(variant: kotlin.String? = null): $type? = ${name}Field.get(variant)
 
-        val dsls: String get() =
+    fun set${name.capitalize()}(value: $type?, variant: kotlin.String? = null) {
+        ${name}Field.set(variant, value, true)
+    }
+"""
+
+        val dsls: String get() = if (!withVariants)
 """
     fun retrieve${name.capitalize()}(block: ($type?) -> Unit) {
         val value = ${name}Field.get()
@@ -73,6 +82,24 @@ class $simpleName(
         block()
     }
 """
+        else
+"""
+    fun retrieve${name.capitalize()}(block: ($type?) -> Unit) {
+        val value = ${name}Field.get(null)
+        block(value)
+    }
+
+    fun retrieve${name.capitalize()}(variant: kotlin.String, block: ($type?) -> Unit) {
+        val value = ${name}Field.get(variant)
+        block(value)
+    }
+
+    fun submit${name.capitalize()}(value: $type?, variant: kotlin.String, block: () -> Unit) {
+        ${name}Field.set(variant, value)
+        block()
+    }
+"""
+
         val access: String get() = StringBuilder().apply {
             if (memberType == ConfigurMember.Type.SYNCHRONOUS || memberType == ConfigurMember.Type.MIXED) {
                 append(property)
