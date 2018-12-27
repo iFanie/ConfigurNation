@@ -7,7 +7,12 @@ annotation class ConfigurMember(
         /**
          * Member retrieval type. <i>Default value is [Type.MIXED].</i>
          */
-        val type: Type = Type.MIXED
+        val type: Type = Type.MIXED,
+
+        /**
+         * When {@code true} the member supports key based variants. <i>Default value is {@code false}.</i>
+         */
+        val withVariants: Boolean = false
 
 ) {
 
