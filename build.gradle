@@ -22,9 +22,9 @@ buildscript {
 
         Version = [
             Build      : [
-                CODE  : 8,
+                CODE  : 9,
                 MAJOR : 0,
-                MINOR : 8
+                MINOR : 9
             ],
 
             Core       : [
@@ -51,7 +51,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${ Version.Core.KOTLIN }"
 
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'

@@ -7,7 +7,8 @@ import kotlin.reflect.KClass
 
 class Compiler : BaseKotlinCompiler() {
 
-    override val processes: Array<KClass<out Any>> = arrayOf( ConfigurNation::class, ConfigurMember::class )
+    override val processes: Array<KClass<out Any>> =
+        arrayOf(ConfigurNation::class, ConfigurMember::class)
 
     private val builders = mutableListOf<Builder>()
 
@@ -26,8 +27,8 @@ class Compiler : BaseKotlinCompiler() {
                         members[index].let { member ->
                             member.annotation.let { annotation ->
                                 Builder.MemberHelper(
-                                        member.info.name, member.info.type,
-                                        annotation.type, annotation.withVariants
+                                    member.info.name, member.info.type,
+                                    annotation.type, annotation.withVariants
                                 )
                             }
                         }

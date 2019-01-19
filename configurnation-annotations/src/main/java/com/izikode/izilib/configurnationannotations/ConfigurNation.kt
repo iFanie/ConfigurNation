@@ -4,14 +4,14 @@ package com.izikode.izilib.configurnationannotations
 @Target(AnnotationTarget.CLASS, AnnotationTarget.FILE)
 annotation class ConfigurNation(
 
-        /**
-         * Config file name and SharedPreferences identifier
-         */
-        val name: String,
+    /**
+     * Config file name and SharedPreferences identifier
+     */
+    val name: String,
 
-        /**
-         * SharedPreferences operation mode
-         */
-        val mode: Int
+    /**
+     * SharedPreferences operation mode
+     */
+    val mode: Int
 
 )

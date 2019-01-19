@@ -1,13 +1,13 @@
 # ConfigurNation
-#### Annotation based Java Interfaces for your SharedPreferences
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.8-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib/com/izikode/izilib/configurnation/0.8/)
+#### Annotation based Kotlin Interfaces for Android SharedPreferences
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Development](https://img.shields.io/badge/Stability-Development-green.svg)](https://shields.io/) [![Bintray](https://img.shields.io/badge/Bintray-0.9-lightgrey.svg)](https://dl.bintray.com/ifanie/izilib/com/izikode/izilib/configurnation/0.9/)
 
 ## Installation
 ### Gradle
 #### Dependencies
 ```groovy
-implementation 'com.izikode.izilib:configurnation:0.8'
-kapt 'com.izikode.izilib:configurnation-compiler:0.8'
+implementation 'com.izikode.izilib:configurnation:0.9'
+kapt 'com.izikode.izilib:configurnation-compiler:0.9'
 ```
 
 #### Source sets
@@ -40,7 +40,7 @@ interface ConfigMap { ... }
 fun aBool(): Boolean
 ```
 * Declare abstract functions inside your interface, for your Config fields.
-    * Decorate the config fields with *@ConfigMember*
+    * Decorate the config fields with *@ConfigurMember*
     * The *name* of the function is the name of the field inside the Config class.
     * The return type of the function is the type of data that will be stored.
         * Only valid SharePreferences types are supported at the moment. Those are:
@@ -70,7 +70,7 @@ For a full example of those parameters, see the Sample project.
 
 ## Licence
 ```
-Copyright 2018 Fanie Veizis
+Copyright 2018 Fanis Veizis
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
