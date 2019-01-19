@@ -10,6 +10,11 @@ public abstract class IO<Type> {
     protected final SharedPreferences preferences;
     private final String name;
 
+    IO(SharedPreferences preferences, String name) {
+        this.preferences = preferences;
+        this.name = name;
+    }
+
     protected String preferenceName(@Nullable String variation) {
         if (variation == null) {
             return name;
@@ -24,11 +29,6 @@ public abstract class IO<Type> {
         } else {
             editor.apply();
         }
-    }
-
-    IO(SharedPreferences preferences, String name) {
-        this.preferences = preferences;
-        this.name = name;
     }
 
     public boolean exist(String variation) {
