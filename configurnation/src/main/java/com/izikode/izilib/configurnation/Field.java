@@ -8,13 +8,13 @@ public class Field<Type> {
     private final IO io;
 
     public Field(SharedPreferences prefs, String name, Class type) {
-        if (Boolean.class.isAssignableFrom(type)) {
+        if (boolean.class.isAssignableFrom(type) || Boolean.class.isAssignableFrom(type)) {
             io = new BooleanIO(prefs, name);
-        } else if (Float.class.isAssignableFrom(type)) {
+        } else if (float.class.isAssignableFrom(type) || Float.class.isAssignableFrom(type)) {
             io = new FloatIO(prefs, name);
-        } else if (Integer.class.isAssignableFrom(type)) {
+        } else if (int.class.isAssignableFrom(type) || Integer.class.isAssignableFrom(type)) {
             io = new IntegerIO(prefs, name);
-        } else if (Long.class.isAssignableFrom(type)) {
+        } else if (long.class.isAssignableFrom(type) || Long.class.isAssignableFrom(type)) {
             io = new LongIO(prefs, name);
         } else if (String.class.isAssignableFrom(type)) {
             io = new StringIO(prefs, name);
